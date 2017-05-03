@@ -1,0 +1,32 @@
+
+.row{
+	/*margin: 0 auto;*/
+	margin-top: 150px;
+	text-align: left;
+}
+
+.btn {
+	width: 100px;
+}
+
+@media only screen and (max-width: 1024px){
+	body {
+	background-image: url("../img/rsm2.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	width: 100%;
+	}
+	.alignm {
+		max-width: 768px;
+		opacity: 0.9;
+		height: 500px;
+	}
+}
+
+.alignm {
+	background-color: #414141;
+	opacity: 0.9;
+	height: 425px;
+
+}
+
