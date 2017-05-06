@@ -1,7 +1,7 @@
 
 .row{
-	/*margin: 0 auto;*/
-	margin-top: 150px;
+	
+	/*margin-top: 150px;*/
 	text-align: left;
 }
 
@@ -9,7 +9,20 @@
 	width: 100px;
 }
 
-@media only screen and (max-width: 1024px){
+
+
+.alignm {
+	background-color: #414141;
+	opacity: 0.9;
+	height: 425px;
+
+}
+
+.form-group {
+		max-width: 300px;
+	}
+
+@media only screen and (max-width: 667px){
 	body {
 	background-image: url("../img/rsm2.jpg");
 	background-attachment: fixed;
@@ -19,14 +32,10 @@
 	.alignm {
 		max-width: 768px;
 		opacity: 0.9;
-		height: 500px;
+		height: 700px;
+	}
+
+	.form-group {
+		max-width: 350px;
 	}
 }
-
-.alignm {
-	background-color: #414141;
-	opacity: 0.9;
-	height: 425px;
-
-}
-

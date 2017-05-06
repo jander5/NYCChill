@@ -36,19 +36,23 @@ body {
 }
 
 .alignm {
-	margin-top: 100px;
+	margin-top: 50px;
 }
-.up {
-	margin-top: 100px;
+.mob{
+	background-color: #414141;
+	opacity: .9;
+	padding: 2px 0px 2px 0px;
+	height: 320px;
 }
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .mastfoot {
-    position: static;
+    position: fixed;
     
   }
   .masthead {
-  	position: static;
+  	position: fixed;
   }
 }
+
