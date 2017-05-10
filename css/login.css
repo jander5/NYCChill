@@ -12,7 +12,7 @@
 
 
 .alignm {
-	background-color: #414141;
+	background-color: #b1b1b1;
 	opacity: 0.9;
 	height: 425px;
 
@@ -37,5 +37,29 @@
 
 	.form-group {
 		max-width: 350px;
+	}
+}
+
+@media only screen and (max-width: 1024px) and (max-device-width: 1366px){
+	body {
+	background-image: url("../img/rsm2.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	width: 100%;
+	}
+	.alignm {
+		max-width: 500px;
+		opacity: 0.9;
+		height: 600px;
+	}
+
+	.form-group {
+		max-width: 350px;
+	}
+	.masthead {
+		position: static;
+	}
+	.mastfoot {
+		position: static;
 	}
 }

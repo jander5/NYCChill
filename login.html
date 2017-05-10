@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,7 @@
    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
  <!-- Bootstrap core CSS -->
+ 	 <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
    <link rel="stylesheet" href="css/normalize.css">
    <link href="css/bootstrap.css" rel="stylesheet"> 
    <link rel="stylesheet" href="css/cover.css">
@@ -20,8 +22,11 @@
       <div class="cover-container">
 		  <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
+              <h3 class="masthead-brand">NYC Chill</h3>
               <nav>
+               <form class="navbar-form navbar-right" style="">
+                  <input type="text" class="form-control" placeholder="Search...">
+                </form>
                 <ul class="nav masthead-nav">
                   <li><a href="index.html
                   ">Home</a></li>
@@ -35,73 +40,80 @@
        <div class="row featurette alignm" >
          
             <div class="col-md-6">
-
-                <div class="form-group ">
+            <form>
+                <!-- <div class="form-group "> -->
                  <h2 class="form-signin-heading">Sign In</h2>
                   <label for="example-email-input" class="col-2 col-form-label">Email</label>
                   <div class="col-10">
                     <input class="form-control" type="email" value="email@example.com" id="example-email-input">
                   </div>
-                </div>
-            <div class="form-group ">
+                <!-- </div> -->
+            <!-- <div class="form-group "> -->
               <label for="example-password-input" class="col-2 col-form-label">Password</label>
               <div class="col-10">
                 <input class="form-control" type="password" value="hunter2" id="example-password-input">
-              </div>
-            </div>
+              </div><br>
+            <!-- </div> -->
               
                 <button class="btn btn-primary" type="submit">Sign in</button>
-          
+            </form>
             </div>
-            
-            <div class="col-md-4">
-
-            <div class="form-group ">
+           
+           
+           
+            <div class="col-md-6">
+            <form method="post" action="postpro.php">
+            <!-- <div class="form-group"> -->
               <h2 class="form-signin-heading">Create an account</h2>
               <label for="example-text-input" class="col-2 col-form-label">First Name</label>
               
               <div class="col-10">
-                <input class="form-control" type="text" value="First" id="example-text-input">
+                <input class="form-control " type="text" name="fname" value="First" id="example-text-input" required>
               </div>
 
-            </div>
+            <!-- </div> -->
 
-            <div class="form-group ">
+            <!-- <div class="form-group "> -->
               <label for="example-search-input" class="col-2 col-form-label">Last Name</label>
               
               <div class="col-10">
-                <input class="form-control" type="text" value="Last" id="example-search-input">
+                <input class="form-control" type="text" name="lname"value="Last" id="example-search-input" required>
               </div>
 
-            </div>
+            <!-- </div> -->
 
-            <div class="form-group ">
+            <!-- <div class="form-group "> -->
               <label for="example-email-input" class="col-2 col-form-label">Email</label>
               
               <div class="col-10">
-                <input class="form-control" type="email" value="email@example.com" id="example-email-input">
+                <input class="form-control" type="email" name="email" value="email@example.com" id="example-email-input" required>
               </div>
 
-            </div>
+            <!-- </div> -->
 
-            <div class="form-group ">
+            <!-- <div class="form-group "> -->
               <label for="example-password-input" class="col-2 col-form-label">Password</label>
 
               <div class="col-10">
-                <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                <input class="form-control" type="password" name="pw" value="hunter2" id="example-password-input">
               </div>
               <br>
             <div>
-               <button type="submit" class="btn btn-primary">Submit</button>
+               <button type="submit" 
+              name="submit" class="btn btn-primary">Submit</button>
             </div>
-          
+          </form>
+           <!-- </div> -->
            </div>
            </div>
-           </div>
-      
-      </div>
-      </div>
-      </div>    
+       <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>    
 
 </body>
 </html>

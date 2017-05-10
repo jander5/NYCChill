@@ -10,16 +10,41 @@ body {
 
 }
 
+h3, h1{
+	font-family: 'Yesteryear', cursive;
+	font-size: 26px;
+}
+
+h1 {
+		font-size: 32px;
+}
+
+.lead {
+	text-shadow: 0 3px 3px rgba(0,0,0,.9);
+}
+
+@media only screen and (max-width: 667px){
+	div .mob {margin-top: 60px;}
+	
+}
+@media only screen and (max-width: 768px){
+	div .mob {margin-top: 60px;}
+	
+}
+
 @media only screen and (max-width: 1024px){
 	body {
 	background-image: url("../img/rsm2.jpg");
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
-
 	}
-
+	.mob {max-width: 700px; margin: 0 auto;}
+	div .mob{margin-top: 100px; margin-bottom: 80px;}
+	.form-control { margin: 0 auto; }
 }
+
+
 .carousel {
 	margin-top: 100px;
 }
@@ -39,20 +64,14 @@ body {
 	margin-top: 50px;
 }
 .mob{
-	background-color: #414141;
+	background-color: #b1b1b1;
 	opacity: .9;
 	padding: 2px 0px 2px 0px;
-	height: 320px;
+	height: 450px;
 }
 
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .mastfoot {
-    position: fixed;
-    
-  }
-  .masthead {
-  	position: fixed;
-  }
+input {
+	padding-left: 20px;
 }
+
 
