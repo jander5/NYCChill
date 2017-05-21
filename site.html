@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/ajax.js"></script>
  <!-- Bootstrap core CSS -->
    <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
    <link rel="stylesheet" href="css/normalize.css">
@@ -41,13 +42,14 @@
               </nav>
             </div>
           </div>
+<!--
           <div class="row featurette alignm" >
            <a href="#" class="cola"><h1>NYC 2016</h1></a>
              <div class="caps">
               <div class="col-md-6 col-sm-offset-0 displayer ">
               <h3>Pier 25</h3>
                 <img class="display" src="img/img2.jpg">
-                  <ul id="thumbs">
+                  <ul class="thumbs">
                     <li><img src="img/thumb/img1.jpg"></li>
                     <li><img src="img/thumb/img2.jpg"></li>
                     <li><img src="img/thumb/img3.jpg"></li>
@@ -56,7 +58,7 @@
               <div class="col-md-6 col-sm-offset-0 displayer"> 
                <h3>Christoper Street Piers</h3>
                 <img class="display" src="img/chrisSt.jpg">
-                  <ul id="thumbs">
+                  <ul class="thumbs">
                     <li><img src="img/thumb/chrisSt4.jpg"></li>
                     <li><img src="img/thumb/chrisSt2.jpg"></li>
                     <li><img src="img/thumb/chrisSt3.jpg"></li>
@@ -67,7 +69,7 @@
               <div class="col-md-6 col-sm-offset-0 displayer"> 
                <h3>aaggea</h3>
                 <img class="display" src="img/man2.jpg">
-                  <ul id="thumbs">
+                  <ul class="thumbs">
                     <li><img src="img/thumb/man.jpg"></li>
                     <li><img src="img/thumb/man2.jpg"></li>
                     <li><img src="img/thumb/man3.jpg"></li>
@@ -77,7 +79,7 @@
               <div class="col-md-6 col-sm-offset-0 displayer"> 
                <h3>aaggea</h3>
                 <img class="display" src="img/man2.jpg">
-                  <ul id="thumbs">
+                  <ul class="thumbs">
                     <li><img src="img/thumb/man.jpg"></li>
                     <li><img src="img/thumb/man2.jpg"></li>
                     <li><img src="img/thumb/man3.jpg"></li>
@@ -92,18 +94,18 @@
             <h1>NYC 2015</h1></a>
              <div class="caps" style="display: none;">
               <div class="col-md-6 col-sm-offset-0 displayer ">
-          
+                <h3>Somewhere</h3>
                 <img class="display" src="img/img2.jpg">
-                  <ul id="thumbs">
+                  <ul class="thumbs">
                     <li><img src="img/thumb/img1.jpg"></li>
                     <li><img src="img/thumb/img2.jpg"></li>
                     <li><img src="img/thumb/img3.jpg"></li>
                   </ul>
               </div>
               <div class="col-md-6 col-sm-offset-0 displayer"> 
-               
+               <h3>Somewhere</h3>
                 <img class="display" src="img/chrisSt.jpg">
-                  <ul id="thumbs">
+                  <ul class="thumbs">
                     <li><img src="img/thumb/chrisSt4.jpg"></li>
                     <li><img src="img/thumb/chrisSt2.jpg"></li>
                     <li><img src="img/thumb/chrisSt3.jpg"></li>
@@ -112,9 +114,9 @@
               
               </div>
               <div class="col-md-6 col-sm-offset-0 displayer"> 
-               
+               <h3>Somewhere</h3>
                 <img class="display" src="img/chrisSt.jpg">
-                  <ul id="thumbs">
+                  <ul class="thumbs">
                     <li><img src="img/thumb/chrisSt4.jpg"></li>
                     <li><img src="img/thumb/chrisSt2.jpg"></li>
                     <li><img src="img/thumb/chrisSt3.jpg"></li>
@@ -125,28 +127,20 @@
               </div>
           </div> 
           <hr>
-          <div class="row featurette alignm" >
-           <a href="#" class="cola">
-            <h1>NYC 2014</h1></a><br>
-             <div class="caps" style="display: none;">
-              <div class="col-md-6 col-sm-offset-0 displayer ">
-          
-               
-              </div>
-              <div class="col-md-6 col-sm-offset-0 displayer"> 
-               
+--><div id="first">
+    <div  class="row featurette alignm" >
+        <a href="#" class="cola">
+        <h1>NYC 2014</h1></a>
+        <div class="caps" style="display: none;">
+          <div id="sites" class="col-md-6 col-sm-offset-0 displayer ">
                 
-              
-              </div>
-              <div class="col-md-6 col-sm-offset-0 displayer"> 
                
-                
-              
-              </div>
-              </div>
-          </div> 
+          </div>
+         </div>
+    </div> 
+  </div>
   <script>
-    thumbs = (document.querySelectorAll("#thumbs > li > img"));
+    thumbs = (document.querySelectorAll(".thumbs > li > img"));
     for (i = 0; i < thumbs.length; ++i){
     thumbs[i].onclick = function(){
         imgsrc = this.src;

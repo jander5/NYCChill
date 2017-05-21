@@ -50,7 +50,7 @@ h1 {
 }
 
 #displayer{ max-height:300px;}
-		#thumbs{list-style: none;}
+		.thumbs{list-style: none;}
 		li{ display: inline-block;}
 		li img{ max-width:50px;}
 
