@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
+    
+    
 function photoup() {
+    ary = [];
     $.ajax({
 			url: 'obj.json',
 			type: 'get',
@@ -20,20 +23,34 @@ function photoup() {
 					var year = value.year;
                      u = year +'_'+ location;
                     
-                    
-                    $('#first').append('<div class="row featurette alignm"><a href="#" class="cola"><h1>NYC' + year +'</h1></a><div class="caps" style="display: none;">');
+                    if(ary.indexOf(year) == -1){                        
+                        ary.push(year);
+                        $('#first').append('<div class="row featurette alignm"><a href="#" class="cola"><h1>NYC ' + year +'</h1></a><div class="caps" style="display: none;"><div id="sites'+year+'"></div></div>');
+                    }
                     
                      $('#sites'+ year).append('<div id="'+id+'"class="col-md-6 col-sm-offset-0 displayer"></div>');
                     
                     $("#"+id).append('<h3>'+location+'</h3>');
                     $("#"+id).append('<img class="display" src="'+ u +'/img1.jpg">');
                     $("#"+id).append('<ul class="thumbs"></ul>'); 
-                    $("#"+id+" .thumbs").append('<li><img src="'+ u +'/img1.jpg"></li><li><img src="'+ u +'/img2.jpg"></li><li><img src="'+ u +'/img3.jpg"></li><li><img src="'+ u +'/img4.jpg"></li>');
-
-              
                     
-				});
-                thumbs = (document.querySelectorAll(".thumbs > li > img"));
+//                    var winloc = window.location.href; winloc+
+                    
+                    p1 = '/'+ u +'/img1.jpg';
+                    p2 = '/'+ u +'/img2.jpg';
+                    p3 = '/'+ u +'/img3.jpg';
+                    p4 = '/'+ u +'/img4.jpg';
+                    
+//                    console.log(p1);
+                    pics= [p1,p2,p3,p4];
+                    $.each(pics, function(i,v){
+                        
+                        console.log(v);
+                         $.get(v)
+                        .done(function(){
+                        $("#"+id+" .thumbs").append('<li><img src="'+ v +'"></li>');
+                             
+                 thumbs = (document.querySelectorAll(".thumbs > li > img"));
     for (i = 0; i < thumbs.length; ++i){
     thumbs[i].onclick = function(){
         imgsrc = this.src;
@@ -46,6 +63,16 @@ function photoup() {
         //display.src = 'img/' + imgsrc;
       };
     }
+                    }) .fail(function(){
+                        return false;
+                    })
+                    
+                    })
+              
+                    
+				});
+                
+   
                 var g = document.querySelectorAll('.cola');
 
           for (i = 0; i < g.length; ++i){
