@@ -19,12 +19,52 @@ $k = "object".$objectCount;
 
 
 // insert my variables into an array stored in a variable called $add
+
+
+
+$u = $g."_".$n;
+mkdir($u);
+
+$thumb = array();
+// Store the image on my service
+if (file_exists($_FILES['file1']['tmp_name'])){
+//print_r($_FILES['file1']);
+$t = $_FILES['file1']['tmp_name'];
+$f = "$u/img1.jpg";
+move_uploaded_file( $t, $f); 
+array_push($thumb, $f);
+}
+
+if (file_exists($_FILES['file2']['tmp_name'])){
+//print_r($_FILES['file2']);
+$t2 = $_FILES['file2']['tmp_name'];
+$f2 = "$u/img2.jpg";
+move_uploaded_file( $t2, $f2);
+array_push($thumb, $f2);
+}
+
+if (file_exists($_FILES['file3']['tmp_name'])){
+//print_r($_FILES['file3']);
+$t3 = $_FILES['file3']['tmp_name'];
+$f3 = "$u/img3.jpg";
+move_uploaded_file( $t3, $f3);
+array_push($thumb, $f3);
+}
+
+if (file_exists($_FILES['file4']['tmp_name'])){
+//print_r($_FILES['file4']);
+$t4 = $_FILES['file4']['tmp_name'];
+$f4 = "$u/img4.jpg";
+move_uploaded_file( $t4, $f4); 
+array_push($thumb, $f4);
+}
+
 $add = array(
 
 	"location" => $n,
-	"year" => $g
+	"year" => $g,
+	"thumbs" => $thumb
 );
-
 
 // append my new array into the json array
 $j[$k] = $add;
@@ -32,33 +72,6 @@ $j[$k] = $add;
 // take my updated json array, format it back into Json and Overwrite it into the Json file
 $ju = json_encode($j);
 file_put_contents('obj.json', $ju);
-
-$u = $g."_".$n;
-mkdir($u);
-
-
-// Store the image on my service
-$t = $_FILES['file1']['tmp_name'];
-$f = "$u/img1.jpg";
-move_uploaded_file( $t, $f); 
-
-
-
-$t2 = $_FILES['file2']['tmp_name'];
-$f2 = "$u/img2.jpg";
-move_uploaded_file( $t2, $f2); 
-
-
-
-$t3 = $_FILES['file3']['tmp_name'];
-$f3 = "$u/img3.jpg";
-move_uploaded_file( $t3, $f3); 
-
-
-
-$t4 = $_FILES['file4']['tmp_name'];
-$f4 = "$u/img4.jpg";
-move_uploaded_file( $t4, $f4); 
 
 
 header('location:site.html');

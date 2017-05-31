@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
 
 	$connection = mysqli_connect("localhost", "root", "root", "phptest");
 
-	$query = "select * from capture where pw='$pw' AND email='$email'";
+	$qry = "select * from TBNAME where pw='$pw' AND email='$email'";
 
 	$loginCheck = mysqli_query($connection, $query);
 
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
 			$_SESSION['email'] = $row["email"];
 			//echo $row["pw"].'<br>';
 			$_SESSION['pw'] = $row["pw"];
-			echo "<a href=\"up.html\">proceed to profile</a>";
+			header('location:up.html')
 		}
 	} 
 	else {
