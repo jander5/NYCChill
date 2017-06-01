@@ -40,22 +40,22 @@
        <div class="row featurette alignm" >
          
             <div class="col-md-6">
-            <form action="login.php">
+            <form method ="post" action="login.php">
                 <!-- <div class="form-group "> -->
                  <h2 class="form-signin-heading">Sign In</h2>
                   <label for="example-email-input" class="col-2 col-form-label">Email</label>
                   <div class="col-10">
-                    <input class="form-control" type="email" value="email@example.com" id="example-email-input">
+                    <input class="form-control" name="email" type="email" placeholder="email@mail.com" id="example-email-input">
                   </div>
                 <!-- </div> -->
             <!-- <div class="form-group "> -->
               <label for="example-password-input" class="col-2 col-form-label">Password</label>
               <div class="col-10">
-                <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                <input class="form-control" name="pwd" type="password" placeholder="*******" id="example-password-input">
               </div><br>
             <!-- </div> -->
               
-                <button class="btn btn-primary" type="submit">Sign in</button>
+                <button class="btn btn-primary" type="submit" name="submit">Sign in</button>
             </form>
             </div>
            
@@ -68,7 +68,7 @@
               <label for="example-text-input" class="col-2 col-form-label">First Name</label>
               
               <div class="col-10">
-                <input class="form-control " type="text" name="fname" value="First" id="example-text-input" required>
+                <input class="form-control " type="text" name="fname" placeholder="First" id="example-text-input" required>
               </div>
 
             <!-- </div> -->
@@ -77,7 +77,7 @@
               <label for="example-search-input" class="col-2 col-form-label">Last Name</label>
               
               <div class="col-10">
-                <input class="form-control" type="text" name="lname"value="Last" id="example-search-input" required>
+                <input class="form-control" type="text" name="lname" placeholder="Last" id="example-search-input" required>
               </div>
 
             <!-- </div> -->
@@ -86,7 +86,7 @@
               <label for="example-email-input" class="col-2 col-form-label">Email</label>
               
               <div class="col-10">
-                <input class="form-control" type="email" name="email" value="email@example.com" id="example-email-input" required>
+                <input class="form-control" type="email" name="email" placeholder="email@example.com" id="example-email-input" required>
               </div>
 
             <!-- </div> -->
@@ -95,12 +95,12 @@
               <label for="example-password-input" class="col-2 col-form-label">Password</label>
 
               <div class="col-10">
-                <input class="form-control" type="password" name="pw" value="hunter2" id="example-password-input">
+                <input class="form-control" type="password" name="pw" placeholder="*******" id="example-password-input">
               </div>
               <br>
             <div>
-               <button type="submit" 
-              name="submit" class="btn btn-primary">Submit</button>
+               <button type="Submit" 
+              name="Submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
            <!-- </div> -->

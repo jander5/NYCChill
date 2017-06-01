@@ -1,43 +1,35 @@
-<?php
+<?php session_start();
 		
 if(isset($_POST['submit'])){
-	if (empty($_POST['email']) || empty($_POST['pw'])) {
-	echo "Username or Password is invalid";
-} else {
-	$email=$_POST['email'];
-	$pw=$_POST['pw'];
-
-	$connection = mysqli_connect("localhost", "root", "root", "phptest");
-
-	$qry = "select * from TBNAME where pw='$pw' AND email='$email'";
-
-	$loginCheck = mysqli_query($connection, $query);
-
-	$rows = mysqli_num_rows($loginCheck);
-
-	echo $rows;
-
-	echo "<br>";
-
-	if ($rows == 1) {
-		while($row = mysqli_fetch_assoc($loginCheck)) {
-			//echo $row["uid"].'<br>';
-			$_SESSION['uid'] = $row["uid"];
-			//echo $row["time"].'<br>';
-			$_SESSION['time'] = $row["time"];
-			//echo $row["name"].'<br>';
-			$_SESSION['name'] = $row["name"];
-			//echo $row["email"].'<br>';
-			$_SESSION['email'] = $row["email"];
-			//echo $row["pw"].'<br>';
-			$_SESSION['pw'] = $row["pw"];
-			header('location:up.html')
-		}
-	} 
-	else {
-		echo "try again";
-	}
-	mysqli_close($connection); // Closing Connection
-}
-}
+            if(empty($_POST['email']) || empty($_POST['pwd'])){
+                echo "empty fields";
+            } else{
+                $e = $_POST['email'];
+                $p = $_POST['pwd'];
+                
+                $cnt = mysqli_connect("localhost", "root", "root", "janderson");
+                
+                $qry = "SELECT * from nycchill where pwd = '$p' AND email = '$e'";
+                
+                $login = mysqli_query($cnt, $qry);
+                
+                $rows = $login->num_rows;
+                
+//                print_r($login);
+//               echo "<hr>";
+//                echo $rows;
+                
+                if($rows == 1 ){
+                    $a = mysqli_fetch_assoc($login);
+                    //print_r($a);
+                   
+                    $_SESSION['email'] = $a['email'];
+                    $_SESSION['pwd'] = $a['pwd'];
+                    header('location:up.html');
+                    
+               
+                }
+            }
+            
+        }
 ?>

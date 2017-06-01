@@ -26,7 +26,7 @@ $(document).ready(function () {
 					$('#first').append('<div class="row featurette alignm"><a href="#" class="cola"><h1>NYC ' + year + '</h1></a><div class="caps" style="display: none;"><div id="sites' + year + '"></div></div>');
 				}
 
-				$('#sites' + year).append('<div id="' + id + '"class="col-md-6 col-sm-offset-0 displayer"></div>');
+				$('#sites' + year).append('<div id="' + id + '"class=" col-sm-offset-0 displayer"></div>');
 
 				$("#" + id).append('<h3>' + location + '</h3>');
 				$("#" + id).append('<img class="display" src="' + u + '/img1.jpg">');
